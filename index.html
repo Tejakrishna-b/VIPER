@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>VIPER Knowledge Portal</title>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+<style>
+
+
+body {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	margin: 0;
+	background: #f7f9fb;
+	color: #23395d;
+}
+header {
+	background: #1a4d2e;
+	color: #fff;
+	padding: 32px 0 24px 0;
+	font-size: 32px;
+	text-align: center;
+	letter-spacing: 1px;
+	box-shadow: 0 2px 8px rgba(26,42,78,0.08);
+}
+.container {
+	display: flex;
+}
+.sidebar {
+	width: 260px;
+	background: #218838;
+	height: 100vh;
+	position: fixed;
+	overflow: auto;
+	box-shadow: 2px 0 8px rgba(26,42,78,0.05);
+}
+.sidebar a {
+	display: block;
+	color: #fff;
+	padding: 14px 24px;
+	text-decoration: none;
+	font-size: 17px;
+	border-left: 4px solid transparent;
+	transition: background 0.2s, border-left 0.2s;
+}
+.sidebar a:hover {
+	background: #1a4d2e;
+	border-left: 4px solid #43b02a;
+}
+.content {
+	margin-left: 260px;
+	padding: 40px 32px;
+	width: calc(100% - 260px);
+}
+.section {
+	background: #fff;
+	padding: 32px 28px;
+	margin-bottom: 32px;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(26,42,78,0.07);
+	position: relative;
+}
+h2 {
+	color: #43b02a;
+	font-size: 26px;
+	margin-bottom: 12px;
+}
+h3 {
+	color: #1a4d2e;
+	font-size: 20px;
+	margin-top: 24px;
+}
+ul {
+	line-height: 1.8;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background: #f7f9fb;
+	border-radius: 8px;
+	overflow: hidden;
+}
+th, td {
+	border: 1px solid #e3e7ed;
+	padding: 12px;
+}
+th {
+	background: #43b02a;
+	color: #fff;
+	font-weight: 600;
+}
+.mermaid {
+	background: #eaf6ee;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 16px;
+}
+a {
+	color: #218838;
+	font-weight: 500;
+	text-decoration: underline;
+}
+.infobox {
+	background: #eaf6ee;
+	border-left: 6px solid #43b02a;
+	padding: 16px 20px;
+	margin: 18px 0;
+	border-radius: 8px;
+	color: #23395d;
+	font-size: 16px;
+}
+.tooltip {
+	position: relative;
+	cursor: pointer;
+	border-bottom: 1px dotted #43b02a;
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 220px;
+	background-color: #218838;
+	color: #fff;
+	text-align: left;
+	border-radius: 6px;
+	padding: 10px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -110px;
+	opacity: 0;
+	transition: opacity 0.3s;
+	font-size: 15px;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+VIPER – Vertex Intelligent Pipeline for Enterprise Releases
+</header>
+
+
+<div class="container">
+
+<div class="sidebar">
+
+<a href="#overview">VIPER Overview</a>
+<a href="#definition">Definition</a>
+<a href="#why">Why Vertex Uses VIPER</a>
+<a href="#workflow">How VIPER Works</a>
+<a href="#stages">Pipeline Stages</a>
+<a href="#stage-detail">Detailed Pipeline Explanation</a>
+<a href="#architecture">VIPER Architecture</a>
+<a href="#tools">Tools Integrated in VIPER</a>
+<a href="#onboard">Application Onboarding</a>
+<a href="#versions">VIPER Versions</a>
+<a href="#resources">Resources</a>
+
+</div>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+
+<div class="section" id="overview">
+
+<h2>1. VIPER Overview</h2>
+<div class="infobox">
+	<b>Real-World Analogy:</b> Imagine VIPER as the security and quality checkpoint system at a high-tech airport. Every piece of luggage (code) must pass through multiple automated scanners (pipeline stages) before it boards the plane (deployment). This ensures only safe, high-quality items reach their destination.<br>
+	<span style="display:block;margin-top:8px;"><b>FAQ:</b> <span class="tooltip">What if my code fails a stage?<span class="tooltiptext">VIPER will stop the pipeline and provide error details. Fix issues and re-run.</span></span></span>
+</div>
+<ul>
+	<li>VIPER is Vertex’s enterprise CI/CD automation platform, used by all engineering teams.</li>
+	<li>It standardizes how applications are built, tested, secured, and deployed.</li>
+	<li>VIPER integrates multiple DevOps tools to automate the software delivery pipeline.</li>
+	<li>This ensures consistent security, reliability, and faster deployments.</li>
+	<li><span class="tooltip">Why is this important?<span class="tooltiptext">Standardization reduces errors, improves compliance, and speeds up delivery.</span></span></li>
+</ul>
+
+</div>
+
+<!-- DEFINITION -->
+
+<div class="section" id="definition">
+
+<h2>2. VIPER Definition</h2>
+
+<ul>
+
+<li>VIPER stands for <b>Vertex Intelligent Pipeline for Enterprise Releases</b>.</li>
+
+<li>It is a standardized CI/CD framework designed by Vertex engineering teams.</li>
+
+<li>VIPER uses GitHub workflows and integrated DevOps tools.</li>
+
+<li>The platform ensures security compliance, consistent deployments and automation.</li>
+
+</ul>
+
+</div>
+
+<!-- WHY -->
+
+<div class="section" id="why">
+
+<h2>3. Why Vertex Uses VIPER</h2>
+
+<ul>
+
+<li>Before VIPER each team built its own CI/CD pipeline.</li>
+
+<li>Security checks were inconsistent.</li>
+
+<li>Deployments sometimes required manual steps.</li>
+
+<li>Maintaining different pipelines across teams increased complexity.</li>
+
+</ul>
+
+<h3>VIPER solves these problems by</h3>
+
+<ul>
+
+<li>Providing standardized pipeline templates</li>
+
+<li>Integrating security scanning tools</li>
+
+<li>Automating container deployment</li>
+
+<li>Ensuring enterprise governance</li>
+
+</ul>
+
+</div>
+
+<!-- WORKFLOW -->
+
+<div class="section" id="workflow">
+
+<h2>4. How VIPER Works</h2>
+
+<div class="mermaid">
+
+graph LR
+
+A[Developer Writes Code]
+B[Push Code to GitHub]
+C[Pull Request Created]
+D[SonarQube Code Analysis]
+E[Build Application]
+F[Snyk Security Scan]
+G[Docker Image Created]
+H[Image Stored in Registry]
+I[Helm Deployment]
+J[Application Running in Kubernetes]
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+H --> I
+I --> J
+
+</div>
+
+</div>
+
+<!-- PIPELINE STAGES -->
+
+<div class="section" id="stages">
+
+<h2>5. VIPER Pipeline Stages</h2>
+
+<ul>
+	<li><b>Code Validation</b> <span class="tooltip">(Factory Inspection)<span class="tooltiptext">Like a factory inspector checking for defects before assembly.</span></span></li>
+	<li><b>Build Stage</b> <span class="tooltip">(Assembly Line)<span class="tooltiptext">Parts are assembled into a finished product.</span></span></li>
+	<li><b>Testing Stage</b> <span class="tooltip">(Quality Assurance)<span class="tooltiptext">QA team tests the product for reliability.</span></span></li>
+	<li><b>Security Scan</b> <span class="tooltip">(Customs Check)<span class="tooltiptext">Customs officers scan for prohibited items (vulnerabilities).</span></span></li>
+	<li><b>Artifact Generation</b> <span class="tooltip">(Packaging)<span class="tooltiptext">Product is packaged for shipping (JAR, Docker image).</span></span></li>
+	<li><b>Container Scan</b> <span class="tooltip">(Final Scan)<span class="tooltiptext">Final scan before shipment to customers.</span></span></li>
+	<li><b>Deployment</b> <span class="tooltip">(Delivery)<span class="tooltiptext">Product is delivered to the customer (production).</span></span></li>
+</ul>
+
+</div>
+
+<!-- PIPELINE DETAIL -->
+
+<div class="section" id="stage-detail">
+
+<h2>6. Detailed Stage-by-Stage Pipeline Explanation</h2>
+
+<h3>Code Validation</h3>
+
+<ul>
+
+<li>Tool used: <b>SonarQube</b></li>
+<li>Analyzes code quality, bugs and maintainability.</li>
+<li>Ensures coding standards are followed.</li>
+
+</ul>
+
+<h3>Build Stage</h3>
+
+<ul>
+
+<li>Build tools like Maven or Gradle compile the application.</li>
+<li>Example: Java Spring Boot application compiled into a JAR.</li>
+
+</ul>
+
+<h3>Security Scan</h3>
+
+<ul>
+
+<li>Tool used: <b>Snyk</b></li>
+<li>Detects security vulnerabilities in dependencies.</li>
+
+</ul>
+
+<h3>Container Creation</h3>
+
+<ul>
+
+<li>Docker builds a container image.</li>
+<li>This image includes the application and its dependencies.</li>
+
+</ul>
+
+<h3>Deployment</h3>
+
+<ul>
+
+<li>Helm creates Kubernetes deployment templates.</li>
+<li>ArgoCD deploys the container to Kubernetes clusters.</li>
+
+</ul>
+
+</div>
+
+<!-- ARCHITECTURE -->
+
+<div class="section" id="architecture">
+
+<h2>7. VIPER Architecture</h2>
+
+<div class="mermaid">
+
+graph TD
+
+Developer --> GitHub
+GitHub --> VIPER_Pipeline
+VIPER_Pipeline --> SonarQube
+VIPER_Pipeline --> Snyk
+VIPER_Pipeline --> Build
+Build --> Docker
+Docker --> Container_Registry
+Container_Registry --> Helm
+Helm --> ArgoCD
+ArgoCD --> Kubernetes
+
+</div>
+
+</div>
+
+<!-- TOOLS -->
+
+<div class="section" id="tools">
+
+<h2>8. Tools Integrated in VIPER</h2>
+
+<table>
+	<tr>
+		<th>Tool</th>
+		<th>Purpose</th>
+		<th>Documentation</th>
+	</tr>
+	<tr>
+		<td><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="height:24px;vertical-align:middle;"> GitHub Actions</td>
+		<td>Runs CI/CD workflows</td>
+		<td><a href="https://docs.github.com/actions" target="_blank">Docs</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://www.sonarqube.org/logos/sonarqube-logo.svg" alt="SonarQube" style="height:24px;vertical-align:middle;"> SonarQube</td>
+		<td>Code quality analysis</td>
+		<td><a href="https://docs.sonarqube.org" target="_blank">Docs</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://snyk.io/wp-content/uploads/snyk-logo.png" alt="Snyk" style="height:24px;vertical-align:middle;"> Snyk</td>
+		<td>Security vulnerability scanning</td>
+		<td><a href="https://docs.snyk.io" target="_blank">Docs</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" style="height:24px;vertical-align:middle;"> Docker</td>
+		<td>Application container creation</td>
+		<td><a href="https://docs.docker.com" target="_blank">Docs</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://helm.sh/img/helm.svg" alt="Helm" style="height:24px;vertical-align:middle;"> Helm</td>
+		<td>Kubernetes deployment templates</td>
+		<td><a href="https://helm.sh/docs" target="_blank">Docs</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://argo-cd.readthedocs.io/en/stable/assets/logo.png" alt="ArgoCD" style="height:24px;vertical-align:middle;"> ArgoCD</td>
+		<td>GitOps deployment automation</td>
+		<td><a href="https://argo-cd.readthedocs.io" target="_blank">Docs</a></td>
+	</tr>
+</table>
+
+</div>
+
+<!-- ONBOARDING -->
+
+<div class="section" id="onboard">
+
+<h2>9. How to Onboard an Application to VIPER</h2>
+
+<ul>
+
+<li>Create a repository in GitHub.</li>
+
+<li>Add VIPER workflow configuration file.</li>
+
+<li>Create Dockerfile for the application.</li>
+
+<li>Add application configuration (viper_config.yaml).</li>
+
+<li>Create Pull Request.</li>
+
+<li>Once PR is merged VIPER pipeline starts automatically.</li>
+
+<li>The pipeline validates, builds and deploys the application.</li>
+
+</ul>
+
+</div>
+
+<!-- VIPER VERSIONS -->
+
+<div class="section" id="versions">
+
+<h2>10. VIPER Versions</h2>
+
+<table>
+
+<tr>
+<th>Version</th>
+<th>Key Changes</th>
+<th>Release Link</th>
+</tr>
+
+<tr>
+<td>v4.0</td>
+<td>Initial enterprise CI/CD pipeline with security scanning</td>
+<td><a href="https://github.com/vertexinc/prodeng-viper-dev/releases" target="_blank">GitHub</a></td>
+</tr>
+
+<tr>
+<td>v4.1</td>
+<td>Improved scanning configuration and pipeline optimizations</td>
+<td><a href="https://github.com/vertexinc/prodeng-viper-dev/releases" target="_blank">GitHub</a></td>
+</tr>
+
+<tr>
+<td>v4.2</td>
+<td>Promotion pipelines and improved deployment flow</td>
+<td><a href="https://github.com/vertexinc/prodeng-viper-dev/releases" target="_blank">GitHub</a></td>
+</tr>
+
+<tr>
+<td>v4.5</td>
+<td>Multi-language support and improved DevOps integration</td>
+<td><a href="https://github.com/vertexinc/prodeng-viper-dev/releases" target="_blank">GitHub</a></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- RESOURCES -->
+
+<div class="section" id="resources">
+
+<h2>11. Resources</h2>
+<ul>
+	<li><a href="https://github.com/vertexinc/prodeng-viper-dev" target="_blank">VIPER GitHub Repository</a></li>
+	<li><a href="https://github.com/vertexinc/prodeng-viper-dev/blob/main/docs/SETUP.md" target="_blank">VIPER Setup Documentation</a></li>
+	<li><a href="https://github.com/vertexinc/prodeng-viper-dev/releases" target="_blank">VIPER Release Notes</a></li>
+	<li><a href="#" target="_blank">Vertex Confluence – VIPER Documentation</a></li>
+	<li><a href="#" target="_blank">Vertex SharePoint – VIPER Architecture PPT</a></li>
+	<li><a href="#" target="_blank">Vertex DevOps Knowledge Portal</a></li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+mermaid.initialize({startOnLoad:true});
+// FAQ collapsible
+document.querySelectorAll('.faq-toggle').forEach(function(btn){
+	btn.onclick=function(){
+		var box=this.nextElementSibling;
+		box.style.display=box.style.display==='block'?'none':'block';
+	};
+});
+</script>
+
+</body>
+</html>

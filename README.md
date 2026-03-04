@@ -1,2 +1,0 @@
-# VIPER
-VIPER KB

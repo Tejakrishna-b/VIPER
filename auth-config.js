@@ -10,8 +10,7 @@ const AUTH_CONFIG = {
     
     // Allowed email domains (company emails)
     allowedDomains: [
-        '@vertexinc.com',    // Vertex Inc company domain
-        '@vertex.com'        // Alternative Vertex domain
+        '@vertexinc.com'    // Vertex Inc company domain
     ],
     
     // Allowed specific GitHub usernames (optional)

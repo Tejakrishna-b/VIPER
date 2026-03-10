@@ -14,11 +14,12 @@ export default {
 
 async function handleRequest(request) {
   const url = new URL(request.url)
+  const origin = request.headers.get('Origin') || '';
   
-  // CORS headers
+  // CORS headers - allow both GitHub Pages and local testing
   const corsHeaders = {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Origin': origin.includes('github.io') || origin.includes('localhost') || origin.includes('file://') ? origin : ALLOWED_ORIGIN,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS, GET',
     'Access-Control-Allow-Headers': 'Content-Type',
   }
 

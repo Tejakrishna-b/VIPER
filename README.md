@@ -52,13 +52,24 @@ python3 -m http.server 8000
 - Responsive sidebar navigation
 - Clean, professional design
 
-## 🔒 Authentication (Optional)
+## 🔒 Authentication
 
-The portal includes optional GitHub OAuth authentication. To enable:
+The portal uses GitHub OAuth authentication with **email domain verification**.
 
-1. Configure `auth-config.js` with your GitHub OAuth credentials
-2. Deploy `cloudflare-worker.js` on Cloudflare Workers
-3. Update the worker URL in `auth-config.js`
+### Who Can Access:
+✅ Anyone with **@vertexinc.com** or **@vertex.com** email  
+✅ Specific GitHub usernames (configured in auth-config.js)  
+
+### Setup Authentication:
+**Follow the complete guide:** [SETUP-AUTH.md](SETUP-AUTH.md)
+
+Quick steps:
+1. Create GitHub OAuth App
+2. Deploy Cloudflare Worker
+3. Update `auth-config.js` with your credentials
+4. Push to GitHub
+
+**Setup time:** ~15 minutes
 
 ---
 

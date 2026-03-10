@@ -3,7 +3,7 @@
 
 const AUTH_CONFIG = {
     // GitHub OAuth App Client ID (create at: https://github.com/settings/developers)
-    clientId: 'YOUR_GITHUB_CLIENT_ID',
+    clientId: 'Ov23licjO6ph0IxnBL8Y',
     
     // Redirect URI (must match your GitHub Pages URL)
     redirectUri: 'https://Tejakrishna-b.github.io/VIPER/',

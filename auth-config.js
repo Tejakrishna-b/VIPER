@@ -1,6 +1,8 @@
 // GitHub OAuth Configuration
 // Replace these values with your GitHub OAuth App credentials
 
+console.log('auth-config.js loaded');
+
 const AUTH_CONFIG = {
     // GitHub OAuth App Client ID (create at: https://github.com/settings/developers)
     clientId: 'Ov23licjO6ph0IxnBL8Y',
@@ -31,11 +33,13 @@ class GitHubAuth {
     }
 
     async init() {
+        console.log('Auth init started');
         // Check if returning from GitHub OAuth
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
 
         if (code) {
+            console.log('Code found, handling callback');
             await this.handleCallback(code);
             return;
         }
@@ -44,14 +48,17 @@ class GitHubAuth {
         this.token = sessionStorage.getItem('github_token');
         
         if (this.token) {
+            console.log('Token found, validating');
             await this.validateToken();
         } else {
+            console.log('No token, redirecting to login');
             this.redirectToLogin();
         }
     }
 
     redirectToLogin() {
         const authUrl = `https://github.com/login/oauth/authorize?client_id=${this.config.clientId}&redirect_uri=${encodeURIComponent(this.config.redirectUri)}&scope=user:email`;
+        console.log('Redirecting to:', authUrl);
         window.location.href = authUrl;
     }
 
@@ -189,6 +196,7 @@ class GitHubAuth {
 
 // Initialize authentication when page loads
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing auth');
     const auth = new GitHubAuth(AUTH_CONFIG);
     auth.init();
 });

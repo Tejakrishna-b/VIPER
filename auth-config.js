@@ -151,6 +151,20 @@ class GitHubAuth {
     showContent() {
         document.getElementById('auth-gate')?.remove();
         document.getElementById('main-content').style.display = 'block';
+        
+        // Initialize Mermaid diagrams after content is shown
+        if (typeof mermaid !== 'undefined') {
+            mermaid.initialize({ 
+                startOnLoad: false,
+                theme: 'default',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                }
+            });
+            mermaid.run();
+        }
     }
 
     showUnauthorized(email) {

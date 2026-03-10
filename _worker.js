@@ -6,9 +6,11 @@ const GITHUB_CLIENT_ID = 'Ov23licjO6ph0IxnBL8Y';
 const GITHUB_CLIENT_SECRET = '5b62adff184f9d0372e730bf941221637a8769c8';
 const ALLOWED_ORIGIN = 'https://Tejakrishna-b.github.io';
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+export default {
+  async fetch(request) {
+    return handleRequest(request);
+  }
+};
 
 async function handleRequest(request) {
   const url = new URL(request.url)

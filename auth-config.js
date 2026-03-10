@@ -6,7 +6,7 @@ const AUTH_CONFIG = {
     clientId: 'YOUR_GITHUB_CLIENT_ID',
     
     // Redirect URI (must match your GitHub Pages URL)
-    redirectUri: 'https://Tejakrishna-b.github.io/VIPER-main/',
+    redirectUri: 'https://Tejakrishna-b.github.io/VIPER/',
     
     // Allowed email domains (company emails)
     allowedDomains: [

@@ -57,9 +57,8 @@ class GitHubAuth {
 
     async handleCallback(code) {
         try {
-            // Note: This requires a backend proxy for security
-            // See setup instructions below
-            const response = await fetch('https://YOUR_WORKER_URL.workers.dev/auth/github', {
+            // Cloudflare Worker for OAuth
+            const response = await fetch('https://viper-auth.tejakrishna-b.workers.dev/auth/github', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
